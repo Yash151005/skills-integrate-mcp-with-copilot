@@ -1,200 +1,96 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f5f5f5;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
+  background: #2d3e50;
+  color: #fff;
+  padding: 1rem;
   text-align: center;
-  padding: 20px 0;
-  margin-bottom: 30px;
-  background-color: #1a237e;
-  color: white;
-  border-radius: 5px;
-}
-
-header h1 {
-  margin-bottom: 10px;
 }
 
 main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#activities-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
-}
-
-@media (min-width: 768px) {
-  main {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-section {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px;
-}
-
-section h3 {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  color: #1a237e;
+  align-items: flex-end;
+  gap: 1.5rem;
+  padding: 2rem 1rem 3rem 1rem;
 }
 
 .activity-card {
-  margin-bottom: 15px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 0;
 }
 
-.activity-card h4 {
-  margin-bottom: 10px;
-  color: #0066cc;
+.activity-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #2d3e50;
 }
 
 .activity-card p {
-  margin-bottom: 8px;
+  margin: 0.3rem 0;
+  color: #444;
 }
 
-/* New styles for participants section */
-.participants-container {
-  margin-top: 15px;
-  padding-top: 12px;
-  border-top: 1px dashed #ccc;
+.activity-card .participants {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
 }
 
-.participants-section h5 {
-  margin-bottom: 8px;
-  color: #1a237e;
-  font-size: 16px;
-}
-
-.participants-section ul {
-  list-style-type: none;
-  padding-left: 5px;
-}
-
-.participants-section ul li {
-  padding: 4px 0;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Remove the bullet point pseudo-element */
-.participants-section ul li::before {
-  display: none;
-}
-
-.participant-email {
-  flex-grow: 1;
-  margin-right: 8px;
-}
-
-.delete-btn {
-  background: none;
+.activity-card button {
+  background: #4caf50;
+  color: #fff;
   border: none;
-  color: #c62828;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   cursor: pointer;
-  font-size: 14px;
-  padding: 2px 5px;
-  transition: all 0.2s;
-  border-radius: 3px;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
 }
 
-.delete-btn:hover {
-  background-color: #ffebee;
-}
-
-.participants-section p {
-  color: #777;
-  font-style: italic;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-button {
-  background-color: #1a237e;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: #3949ab;
-}
-
-.message {
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.success {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #a5d6a7;
-}
-
-.error {
-  background-color: #ffebee;
-  color: #c62828;
-  border: 1px solid #ef9a9a;
-}
-
-.info {
-  background-color: #d1ecf1;
-  color: #0c5460;
-  border: 1px solid #bee5eb;
-}
-
-.hidden {
-  display: none;
+.activity-card button:hover {
+  background: #388e3c;
 }
 
 footer {
+  background: #2d3e50;
+  color: #fff;
   text-align: center;
-  margin-top: 30px;
-  padding: 20px;
-  color: #666;
+  padding: 0.7rem 0;
+  margin-top: auto;
+}
+
+@media (max-width: 700px) {
+  #activities-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
+  .activity-card {
+    width: 95vw;
+    max-width: 400px;
+  }
 }
